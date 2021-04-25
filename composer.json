@@ -1,0 +1,11 @@
+{
+    "name": "jameslevi/string",
+    "description": "Is a simple library that provides common string helpers.",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": ["src/string-helpers.php"]
+    }
+}
