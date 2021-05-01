@@ -95,7 +95,7 @@ if(!function_exists('str_end_with'))
 }
 
 /**
- * Remove all character from string.
+ * Remove all matched character from the string.
  * 
  * @param   string $string
  * @param   mixed $search
@@ -110,7 +110,7 @@ if(!function_exists('str_remove'))
 }
 
 /**
- * Strip string in one or both side.
+ * Remove one or more characters from one or both side of the string.
  * 
  * @param   string $string
  * @param   int $start
@@ -133,13 +133,13 @@ if(!function_exists('str_move'))
 }
 
 /**
- * Strip left side of the string.
+ * Remove one or more characters from the left side of the string.
  * 
  * @param   string $string
  * @param   int $count
  * @return  string
  */
-if(!function_exists('str_moveleft'))
+if(!function_exists('str_move_left'))
 {
     function str_move_left(string $string, int $count)
     {
@@ -148,7 +148,7 @@ if(!function_exists('str_moveleft'))
 }
 
 /**
- * Strip right side of the string.
+ * Remove one or more characters from the right side of the string.
  * 
  * @param   string $string
  * @param   int $count
@@ -163,7 +163,7 @@ if(!function_exists('str_move_right'))
 }
 
 /**
- * Count the number occurence of numeric characters in string.
+ * Count the number of occurences of numeric characters in string.
  * 
  * @param   string $string
  * @return  int
@@ -182,7 +182,7 @@ if(!function_exists('str_count_numeric'))
  * @param   string $string
  * @return  int
  */
-if(!function_exists('str_count_ucaseletter'))
+if(!function_exists('str_count_uppercase_letter'))
 {
     function str_count_uppercase_letter(string $string)
     {
@@ -219,7 +219,7 @@ if(!function_exists('str_count_letter'))
 }
 
 /**
- * Count the number of occurences of line breaks in string.
+ * Count the number of lines in string.
  * 
  * @param   string $string
  * @return  int
@@ -233,7 +233,7 @@ if(!function_exists('str_count_line'))
 }
 
 /**
- * Count the number of occurences of spaces in string.
+ * Count the number of spaces in string.
  * 
  * @param   string $string
  * @return  int
@@ -247,14 +247,14 @@ if(!function_exists('str_count_spaces'))
 }
 
 /**
- * Count the number of occurences of special characters in string.
+ * Count the number of special characters in string.
  * 
  * @param   string $string
  * @return  int
  */
-if(!function_exists('str_count_specialchars'))
+if(!function_exists('str_count_special_chars'))
 {
-    function str_count_specialchars(string $string)
+    function str_count_special_chars(string $string)
     {
         $string = str_remove(trim($string), PHP_EOL);
 
@@ -277,7 +277,7 @@ if(!function_exists('str_count_words'))
 }
 
 /**
- * Return an array of words in string.
+ * Return list of words from the string.
  * 
  * @param   string $string
  * @return  array
@@ -341,32 +341,32 @@ if(!function_exists('str_is_lower'))
 }
 
 /**
- * Make a letter lowercase by index number.
+ * Make a letter lowercase by position number.
  * 
  * @param   string $string
- * @param   int $index
+ * @param   int $position
  * @return  string
  */
 if(!function_exists('str_lowercase'))
 {
-    function str_lowercase(string $string, int $index)
+    function str_lowercase(string $string, int $position)
     {
-        return substr($string, 0, $index) . strtolower($string[$index]) . substr($string, $index + 1, strlen($string));
+        return substr($string, 0, $position) . strtolower($string[$position]) . substr($string, $position + 1, strlen($string));
     }
 }
 
 /**
- * Make a letter uppercase by index number.
+ * Make a letter uppercase by position number.
  * 
  * @param   string $string
- * @param   int $index
+ * @param   int $position
  * @return  string
  */
 if(!function_exists('str_uppercase'))
 {
-    function str_uppercase(string $string, int $index)
+    function str_uppercase(string $string, int $position)
     {
-        return substr($string, 0, $index) . strtoupper($string[$index]) . substr($string, $index + 1, strlen($string));
+        return substr($string, 0, $position) . strtoupper($string[$position]) . substr($string, $position + 1, strlen($string));
     }
 }
 
