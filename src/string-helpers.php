@@ -8,7 +8,6 @@
  * @param   mixed $match
  * @return  bool
  */
-
 if(!function_exists('str_equals'))
 {
     function str_equals(string $string, $match)
@@ -40,10 +39,9 @@ if(!function_exists('str_equals'))
  * @param   mixed $match
  * @return  bool
  */
-
-if(!function_exists('str_startwith'))
+if(!function_exists('str_start_with'))
 {
-    function str_startwith(string $string, $match)
+    function str_start_with(string $string, $match)
     {
         if(is_string($match))
         {
@@ -72,10 +70,9 @@ if(!function_exists('str_startwith'))
  * @param   mixed $match
  * @return  bool
  */
-
-if(!function_exists('str_endwith'))
+if(!function_exists('str_end_with'))
 {
-    function str_endwith(string $string, $match)
+    function str_end_with(string $string, $match)
     {
         if(is_string($match))
         {
@@ -104,7 +101,6 @@ if(!function_exists('str_endwith'))
  * @param   mixed $search
  * @return  string
  */
-
 if(!function_exists('str_remove'))
 {
     function str_remove(string $string, $search)
@@ -121,7 +117,6 @@ if(!function_exists('str_remove'))
  * @param   int $end
  * @return  string
  */
-
 if(!function_exists('str_move'))
 {
     function str_move(string $string, int $start, int $end = 0)
@@ -144,10 +139,9 @@ if(!function_exists('str_move'))
  * @param   int $count
  * @return  string
  */
-
 if(!function_exists('str_moveleft'))
 {
-    function str_moveleft(string $string, int $count)
+    function str_move_left(string $string, int $count)
     {
         return str_move($string, $count);
     }
@@ -160,10 +154,9 @@ if(!function_exists('str_moveleft'))
  * @param   int $count
  * @return  string
  */
-
-if(!function_exists('str_moveright'))
+if(!function_exists('str_move_right'))
 {
-    function str_moveright(string $string, int $count)
+    function str_move_right(string $string, int $count)
     {
         return str_move($string, 0, $count);
     }
@@ -175,12 +168,11 @@ if(!function_exists('str_moveright'))
  * @param   string $string
  * @return  int
  */
-
 if(!function_exists('str_count_numeric'))
 {
     function str_count_numeric(string $string)
     {
-        return count(array_filter(str_split($string),'is_numeric'));
+        return count(array_filter(str_split($string), 'is_numeric'));
     }
 }
 
@@ -190,10 +182,9 @@ if(!function_exists('str_count_numeric'))
  * @param   string $string
  * @return  int
  */
-
 if(!function_exists('str_count_ucaseletter'))
 {
-    function str_count_ucaseletter(string $string)
+    function str_count_uppercase_letter(string $string)
     {
         return strlen(preg_replace('![^A-Z]+!', '', $string));
     }
@@ -205,10 +196,9 @@ if(!function_exists('str_count_ucaseletter'))
  * @param   string $string
  * @return  int
  */
-
-if(!function_exists('str_count_lcaseletter'))
+if(!function_exists('str_count_lowercase_letter'))
 {
-    function str_count_lcaseletter(string $string)
+    function str_count_lowercase_letter(string $string)
     {
         return strlen(preg_replace('![^a-z]+!', '', $string));
     }
@@ -220,12 +210,11 @@ if(!function_exists('str_count_lcaseletter'))
  * @param   string $string
  * @return  int
  */
-
 if(!function_exists('str_count_letter'))
 {
     function str_count_letter(string $string)
     {
-        return str_count_ucaseletter($string) + str_count_lcaseletter($string);
+        return str_count_uppercase_letter($string) + str_count_lowercase_letter($string);
     }
 }
 
@@ -235,7 +224,6 @@ if(!function_exists('str_count_letter'))
  * @param   string $string
  * @return  int
  */
-
 if(!function_exists('str_count_line'))
 {
     function str_count_line(string $string)
@@ -250,7 +238,6 @@ if(!function_exists('str_count_line'))
  * @param   string $string
  * @return  int
  */
-
 if(!function_exists('str_count_spaces'))
 {
     function str_count_spaces(string $string)
@@ -265,10 +252,9 @@ if(!function_exists('str_count_spaces'))
  * @param   string $string
  * @return  int
  */
-
-if(!function_exists('str_count_specialcharacter'))
+if(!function_exists('str_count_specialchars'))
 {
-    function str_count_specialcharacter(string $string)
+    function str_count_specialchars(string $string)
     {
         $string = str_remove(trim($string), PHP_EOL);
 
@@ -282,7 +268,6 @@ if(!function_exists('str_count_specialcharacter'))
  * @param   string $string
  * @return  int
  */
-
 if(!function_exists('str_count_words'))
 {
     function str_count_words(string $string)
@@ -297,7 +282,6 @@ if(!function_exists('str_count_words'))
  * @param   string $string
  * @return  array
  */
-
 if(!function_exists('str_words'))
 {
     function str_words(string $string)
@@ -309,13 +293,12 @@ if(!function_exists('str_words'))
 }
 
 /**
- * Break a string into just a two segments.
+ * Break a string into just two segments.
  * 
  * @param   string $string
  * @param   string $delimeter
  * @return  array
  */
-
 if(!function_exists('str_break'))
 {
     function str_break(string $string, string $delimeter)
@@ -335,7 +318,6 @@ if(!function_exists('str_break'))
  * @param   string $string
  * @return  bool
  */
-
 if(!function_exists('str_is_upper'))
 {
     function str_is_upper(string $string)
@@ -350,7 +332,6 @@ if(!function_exists('str_is_upper'))
  * @param   string $string
  * @return  bool
  */
-
 if(!function_exists('str_is_lower'))
 {
     function str_is_lower(string $string)
@@ -366,10 +347,9 @@ if(!function_exists('str_is_lower'))
  * @param   int $index
  * @return  string
  */
-
-if(!function_exists('str_lcase'))
+if(!function_exists('str_lowercase'))
 {
-    function str_lcase(string $string, int $index)
+    function str_lowercase(string $string, int $index)
     {
         return substr($string, 0, $index) . strtolower($string[$index]) . substr($string, $index + 1, strlen($string));
     }
@@ -382,10 +362,9 @@ if(!function_exists('str_lcase'))
  * @param   int $index
  * @return  string
  */
-
-if(!function_exists('str_ucase'))
+if(!function_exists('str_uppercase'))
 {
-    function str_ucase(string $string, int $index)
+    function str_uppercase(string $string, int $index)
     {
         return substr($string, 0, $index) . strtoupper($string[$index]) . substr($string, $index + 1, strlen($string));
     }
@@ -397,7 +376,6 @@ if(!function_exists('str_ucase'))
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_to_camel'))
 {
     function str_to_camel(string $string)
@@ -412,7 +390,6 @@ if(!function_exists('str_to_camel'))
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_to_snake'))
 {
     function str_to_snake(string $string)
@@ -427,7 +404,6 @@ if(!function_exists('str_to_snake'))
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_to_kebab'))
 {
     function str_to_kebab(string $string)
@@ -442,7 +418,6 @@ if(!function_exists('str_to_kebab'))
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_to_pascal'))
 {
     function str_to_pascal(string $string)
@@ -452,12 +427,11 @@ if(!function_exists('str_to_pascal'))
 }
 
 /**
- * Convert camel case string to snake case.
+ * Convert string from camel case to snake case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_camel_to_snake'))
 {
     function str_camel_to_snake(string $string)
@@ -482,12 +456,11 @@ if(!function_exists('str_camel_to_snake'))
 }
 
 /**
- * Convert camel case string to kebab case.
+ * Convert string from camel case to kebab case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_camel_to_kebab'))
 {
     function str_camel_to_kebab(string $string)
@@ -512,12 +485,11 @@ if(!function_exists('str_camel_to_kebab'))
 }
 
 /**
- * Convert camel case string to pascal case.
+ * Convert string from camel case to pascal case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_camel_to_pascal'))
 {
     function str_camel_to_pascal(string $string)
@@ -527,12 +499,11 @@ if(!function_exists('str_camel_to_pascal'))
 }
 
 /**
- * Convert snake case string to camel case.
+ * Convert string from snake case to camel case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_snake_to_camel'))
 {
     function str_snake_to_camel(string $string)
@@ -544,17 +515,16 @@ if(!function_exists('str_snake_to_camel'))
             $text .= ucfirst($char);
         }
 
-        return str_lcase($text, 0);
+        return str_lowercase($text, 0);
     }
 }
 
 /**
- * Convert snake case string to kebab case.
+ * Convert string from snake case to kebab case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_snake_to_kebab'))
 {
     function str_snake_to_kebab(string $string)
@@ -564,12 +534,11 @@ if(!function_exists('str_snake_to_kebab'))
 }
 
 /**
- * Convert snake case string to pascal case.
+ * Convert string from snake case to pascal case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_snake_to_pascal'))
 {
     function str_snake_to_pascal(string $string)
@@ -586,12 +555,11 @@ if(!function_exists('str_snake_to_pascal'))
 }
 
 /**
- * Convert kebab case string to camel case.
+ * Convert string from kebab case to camel case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_kebab_to_camel'))
 {
     function str_kebab_to_camel(string $string)
@@ -603,17 +571,16 @@ if(!function_exists('str_kebab_to_camel'))
             $text .= ucfirst($char);
         }
 
-        return str_lcase($text, 0);
+        return str_lowercase($text, 0);
     }
 }
 
 /**
- * Convert kebab case string to snake case.
+ * Convert string from kebab case to snake case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_kebab_to_snake'))
 {
     function str_kebab_to_snake(string $string)
@@ -645,27 +612,25 @@ if(!function_exists('str_kebab_to_pascal'))
 }
 
 /**
- * Convert pascal case string to camel case.
+ * Convert string from pascal case string to camel case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_pascal_to_camel'))
 {
     function str_pascal_to_camel(string $string)
     {
-        return str_lcase($string, 0);
+        return str_lowercase($string, 0);
     }
 }
 
 /**
- * Convert pascal case string to snake case.
+ * Convert string from pascal case to snake case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_pascal_to_snake'))
 {
     function str_pascal_to_snake(string $string)
@@ -690,12 +655,11 @@ if(!function_exists('str_pascal_to_snake'))
 }
 
 /**
- * Convert pascal case to kebab case.
+ * Convert string from pascal case to kebab case.
  * 
  * @param   string $string
  * @return  string
  */
-
 if(!function_exists('str_pascal_to_kebab'))
 {
     function str_pascal_to_kebab(string $string)
