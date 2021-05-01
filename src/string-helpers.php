@@ -682,3 +682,59 @@ if(!function_exists('str_pascal_to_kebab'))
         return $text;
     }
 }
+
+/**
+ * Test if string contains one or more word or characters.
+ * 
+ * @param   string $string
+ * @param   mixed $keywords
+ * @return  bool
+ */
+if(!function_exists('str_contains'))
+{
+    function str_contains(string $string, $keywords)
+    {
+        if(is_string($keywords))
+        {
+            $keywords = [$keywords];
+        }
+
+        foreach($keywords as $keyword)
+        {
+            if(strpos($string, $keyword) !== false)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+
+/**
+ * Truncate string if exceeded the maximum charachters and
+ * automatically append "..." at the end of the string.
+ * 
+ * @param   string $string
+ * @param   int $max
+ * @return  string
+ */
+if(!function_exists('str_truncate'))
+{
+    function str_truncate(string $string, int $max)
+    {
+        $length = $max - 3;
+
+        if(strlen($string) > $length)
+        {
+            if(($length + 3) > strlen($string))
+            {
+                $length = strlen($string) - 3;
+            }
+
+            return substr($string, 0, $length) . "...";
+        }
+
+        return $string;
+    }
+}
