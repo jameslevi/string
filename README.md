@@ -18,6 +18,7 @@ if(file_exists(__DIR__.'/vendor/autoload.php'))
     require __DIR__.'/vendor/autoload.php';
 }
 ```
+3. You can now use all functions included from this library.
 
 ## str_equals(string $string, mixed $match) ##
 Make comparison between two strings.
@@ -273,6 +274,30 @@ str_pascal_to_snake("HelloWorld") // Returns "hello_world".
 Convert string from pascal case to kebab case.
 ```php
 str_pascal_to_kebab("HelloWorld") // Returns "hello-world".
+```
+
+## str_camel_to_words(string $string) ##
+Convert camel case string to words.
+```php
+str_camel_to_words("helloWorld") // Returns "hello world".
+```
+
+## str_snake_to_words(string $string) ##
+Convert snake case string to words.
+```php
+str_snake_to_words("hello_world") // Returns "hello world".
+```
+
+## str_kebab_to_words(string $string) ##
+Convert kebab case string to words.
+```php
+str_kebab_to_words("hello-world") // Returns "hello world".
+```
+
+## str_pascal_to_words(string $string) ##
+Convert pascal case string to words.
+```php
+str_pascal_to_words("HelloWorld") // Returns "hello world".
 ```
 
 ## str_truncate(string $string, int $max) ##
