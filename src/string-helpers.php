@@ -684,6 +684,62 @@ if(!function_exists('str_pascal_to_kebab'))
 }
 
 /**
+ * Convert camel case string to words.
+ * 
+ * @param   string $string
+ * @return  string
+ */
+if(!function_exists('str_camel_to_words'))
+{
+    function str_camel_to_words(string $string)
+    {
+        return str_replace('_', ' ', str_camel_to_snake($string));
+    }
+}
+
+/**
+ * Convert snake case string to words.
+ * 
+ * @param   string $string
+ * @return  string
+ */
+if(!function_exists('str_snake_to_words'))
+{
+    function str_snake_to_words(string $string)
+    {
+        return str_replace('_', ' ', $string);
+    }
+}
+
+/**
+ * Convert kebab case string to words.
+ * 
+ * @param   string $string
+ * @return  string
+ */
+if(!function_exists('str_kebab_to_words'))
+{
+    function str_kebab_to_words(string $string)
+    {
+        return str_replace('_', ' ', str_kebab_to_snake($string));
+    }
+}
+
+/**
+ * Convert pascal case string to words.
+ * 
+ * @param   string $string
+ * @return  string
+ */
+if(!function_exists('str_pascal_to_words'))
+{
+    function str_pascal_to_words(string $string)
+    {
+        return str_replace('_', ' ', str_pascal_to_snake($string));
+    }
+}
+
+/**
  * Test if string contains one or more word or characters.
  * 
  * @param   string $string
