@@ -1,5 +1,8 @@
 <?php
 
+// Load all the helper constants.
+require_once 'constants.php';
+
 /**
  * Determine if atleast one of the match string is 
  * equal with the string to test.
@@ -39,9 +42,9 @@ if(!function_exists('str_equals'))
  * @param   mixed $match
  * @return  bool
  */
-if(!function_exists('str_start_with'))
+if(!function_exists('str_starts_with'))
 {
-    function str_start_with(string $string, $match)
+    function str_starts_with(string $string, $match)
     {
         if(is_string($match))
         {
@@ -70,9 +73,9 @@ if(!function_exists('str_start_with'))
  * @param   mixed $match
  * @return  bool
  */
-if(!function_exists('str_end_with'))
+if(!function_exists('str_ends_with'))
 {
-    function str_end_with(string $string, $match)
+    function str_ends_with(string $string, $match)
     {
         if(is_string($match))
         {
@@ -789,6 +792,35 @@ if(!function_exists('str_truncate'))
             }
 
             return substr($string, 0, $length) . "...";
+        }
+
+        return $string;
+    }
+}
+
+/**
+ * Generate random string.
+ * 
+ * @param   int $length
+ * @param   int $pool
+ * @return  string
+ */
+if(!function_exists('str_random'))
+{
+    function str_random(int $length = 10, int $pool = 0)
+    {
+        $string = '';
+        $chars = array(
+            '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            '0123456789',
+            'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'abcdefghijklmnopqrstuvwxyz',
+        )[$pool];
+
+        for($i = 1; $i <= $length; $i++)
+        {
+            $string .= $chars[rand(0, strlen($chars) - 1)];
         }
 
         return $string;
