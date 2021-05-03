@@ -30,17 +30,17 @@ str_equals("hello", array(
 ))
 ```
 
-## str_start_with(string $string, mixed $match)
+## str_starts_with(string $string, mixed $match)
 Determine if string starts with the match string.
 ```php
-str_start_with("hello", "h") // Returns true because hello starts with an h.
+str_starts_with("hello", "h") // Returns true because hello starts with an h.
 ```
 
-## str_end_with(string $string, mixed $match)
+## str_ends_with(string $string, mixed $match)
 Determine if string ends with the match string.
 ```php
 // Returns false because @email.com is not included from the array.
-str_end_with("foo@email.com", array(
+str_ends_with("foo@email.com", array(
   "@gmail.com",
   "@yahoo.com",
 ))
@@ -304,6 +304,16 @@ str_pascal_to_words("HelloWorld") // Returns "hello world".
 Truncate string if exceeded the maximum charachters and automatically append "..." at the end of the string.
 ```php
 str_truncate("Hello World!!!", 8) // Returns "Hello...".
+```
+
+## str_random(int $length = 10, int $pool = 0)
+Generate a random string.
+```php
+str_random(10, STR_RANDOM_DEFAULT); // Return random alphanumeric characters.
+str_random(10, STR_RANDOM_NUMBERS); // Return random numbers.
+str_random(10, STR_RANDOM_LETTERS); // Return random letters.
+str_random(10, STR_RANDOM_LETTERS_UPPERCASE); // Return random uppercase letters.
+str_random(10, STR_RANDOM_LETTERS_LOWERCASE); // Return random lowercase letters.
 ```
 
 ## Contribution
