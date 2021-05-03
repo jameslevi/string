@@ -799,7 +799,7 @@ if(!function_exists('str_truncate'))
 }
 
 /**
- * Generate random string.
+ * Generate a random string.
  * 
  * @param   int $length
  * @param   int $pool
