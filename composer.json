@@ -1,14 +1,17 @@
 {
     "name": "jameslevi/string",
     "description": "Is a simple library that provides common string functions not natively provided by PHP.",
+    "keywords": [
+        "string",
+        "helper"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "James Levi Crisostomo",
             "email": "nerdlabenterprise@gmail.com",
-            "homepage": "https://github.com/jameslevi",
-            "role": "Developer"
+            "homepage": "https://github.com/jameslevi"
         }
     ],
     "require": {
